@@ -27,17 +27,3 @@ then
     "$DIRNAME"/tag.sh || quit "Failed to tag a release." 1
 fi
 
-generate_dist(){
-    python3 setup.py sdist bdist_wheel || quit "Failed to generate source & binary distributions." 1
-}
-
-version=$(current_version);
-
-generate_dist;
-echo "About to post the following distribution files to pypi.org."
-ls -1 dist/"$PROJECT_NAME"-"$version".* || quit "No distribution files found." 1
-
-if prompt_yes_no;
-then
-    python3 -m twine upload dist/"$PROJECT_NAME"-"$version"*
-fi
