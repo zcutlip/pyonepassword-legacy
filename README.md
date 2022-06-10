@@ -1,8 +1,11 @@
-# PYONEPASSWORD
+# PYONEPASSWORD-LEGACY
 
 ## Description
 
-A Python API to sign into and query a 1Password account using the `op` command.
+A Python API to sign into and query a 1Password account using the deprecated 1.x versions of the `op` command.
+
+> Note: This project is intended only to support legacy `op` 1.x versions. It DOES NOT work with `op` versions >= 2.0.0. Although serious bugfixes will be considered, this project should not be considered actively maintained.
+> Users of the new `op` version 2, should use the main project, which IS actively maintained: https://github.com/zcutlip/pyonepassword.
 
 ## Requirements
 
@@ -19,7 +22,7 @@ I don't have a way of knowing how widely this project is used. If you're using i
 ## Installation
 
 ```shell
-python3 -m pip install pyonepassword
+python3 -m pip install git+https://github.com/zcutlip/pyonepassword-legacy
 ```
 
 ## Example Usage
