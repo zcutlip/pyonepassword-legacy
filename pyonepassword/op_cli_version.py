@@ -76,3 +76,6 @@ class OPCLIVersion:
 
 
 MINIMUM_ITEM_CREATION_VERSION = OPCLIVersion('1.12.1')
+
+# versions >= this ceiling are unsupported
+UNSUPPORTED_VERSION_CEILING = OPCLIVersion('2.0.0')
