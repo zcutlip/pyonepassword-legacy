@@ -7,7 +7,7 @@ DIRNAME="$(dirname "$0")"
 # utility functions
 . "$DIRNAME"/functions.sh
 
-if ! branch_is_master;
+if ! branch_is_main;
 then
     quit "Checkout branch 'master' before generating release." 1
 fi
