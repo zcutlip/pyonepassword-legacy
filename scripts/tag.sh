@@ -10,9 +10,9 @@ quit(){
 }
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-if [ ! $branch == "master" ];
+if [ ! $branch == "main" ];
 then
-    echo 
+    echo
     quit "Attempting to tag from branch $branch. Check out 'master' first." 1
 fi
 
