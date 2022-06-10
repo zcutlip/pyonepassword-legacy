@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh -e
 DIRNAME="$(dirname "$0")"
 
 # set PROJECT_NAME variable
@@ -9,7 +9,7 @@ DIRNAME="$(dirname "$0")"
 
 if ! branch_is_main;
 then
-    quit "Checkout branch 'master' before generating release." 1
+    quit "Checkout branch 'main' before generating release." 1
 fi
 
 if ! branch_is_clean;
