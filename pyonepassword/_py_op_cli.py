@@ -9,7 +9,7 @@ from os import environ as env
 from typing import List
 
 from ._py_op_deprecation import deprecated
-from .op_cli_version import OPCLIVersion
+from .op_cli_version import UNSUPPORTED_VERSION_CEILING, OPCLIVersion
 from .op_items._op_items_base import OPAbstractItem
 from .py_op_exceptions import (
     OPCmdFailedException,
@@ -17,7 +17,8 @@ from .py_op_exceptions import (
     OPInvalidItemException,
     OPNotFoundException,
     OPNotSignedInException,
-    OPSigninException
+    OPSigninException,
+    OPVersionNotSupportedException
 )
 
 """
@@ -139,6 +140,9 @@ class _OPCLIExecute:
         if logger:
             self.logger = logger
         self._cli_version: OPCLIVersion = self._get_cli_version(op_path)
+        if self._cli_version >= UNSUPPORTED_VERSION_CEILING:
+            raise OPVersionNotSupportedException(
+                f"'op' version {self._cli_version} not supported. Less than {UNSUPPORTED_VERSION_CEILING} required")
         if account_shorthand is None:
             config = OPCLIConfig()
             try:
