@@ -147,3 +147,8 @@ class OPGetCreatedItemException(_OPAbstractException):
     def __init__(self, msg, item_uuid):
         super().__init__(msg)
         self.uuid = item_uuid
+
+
+class OPVersionNotSupportedException(_OPAbstractException):
+    def __init__(self, msg):
+        super().__init__(msg)
