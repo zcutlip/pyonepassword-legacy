@@ -1,4 +1,4 @@
-__title__ = "pyonepassword"
+__title__ = "pyonepassword-legacy"
 __version__ = "2.0.1.dev0"
 __summary__ = "A python API to query a 1Password account using the 'op' command-line tool"
 

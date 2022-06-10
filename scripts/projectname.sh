@@ -1,1 +1,1 @@
-PROJECT_NAME="pyonepassword"
+PROJECT_NAME="pyonepassword-legacy"
