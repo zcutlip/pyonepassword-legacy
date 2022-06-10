@@ -1,25 +1,24 @@
-import os
-import pathlib
 import json
 import logging
-from json.decoder import JSONDecodeError
-import subprocess
+import os
+import pathlib
 import shlex
+import subprocess
+from json.decoder import JSONDecodeError
 from os import environ as env
 from typing import List
 
+from ._py_op_deprecation import deprecated
 from .op_cli_version import OPCLIVersion
 from .op_items._op_items_base import OPAbstractItem
-
 from .py_op_exceptions import (
-    OPConfigNotFoundException,
-    OPSigninException,
-    OPNotSignedInException,
-    OPNotFoundException,
     OPCmdFailedException,
-    OPInvalidItemException
+    OPConfigNotFoundException,
+    OPInvalidItemException,
+    OPNotFoundException,
+    OPNotSignedInException,
+    OPSigninException
 )
-from ._py_op_deprecation import deprecated
 
 """
 Module to hold stuff that interacts directly with 'op' or its config
